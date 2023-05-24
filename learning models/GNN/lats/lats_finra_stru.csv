@@ -1,0 +1,541 @@
+{"FetchData": [["side"], ["volume"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.65
+{"FetchData": [["side"], ["volume"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	201.07
+{"FetchData": [["side"], ["volume"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.43
+{"FetchData": [["side"], ["lastpx"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.11
+{"FetchData": [["side"], ["lastpx"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	200.52
+{"FetchData": [["side"], ["lastpx"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.13
+{"FetchData": [["side"], ["marketdata"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.78
+{"FetchData": [["side"], ["marketdata"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.88
+{"FetchData": [["side"], ["marketdata"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.23
+{"FetchData": [["side"], ["volume", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	199.66
+{"FetchData": [["side"], ["volume", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.08
+{"FetchData": [["side"], ["lastpx", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.93
+{"FetchData": [["side"], ["volume", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.43
+{"FetchData": [["lastpx"], ["side"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.12
+{"FetchData": [["lastpx"], ["side"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.44
+{"FetchData": [["lastpx"], ["side"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.99
+{"FetchData": [["lastpx"], ["volume"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	204.3
+{"FetchData": [["lastpx"], ["volume"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	203.52
+{"FetchData": [["lastpx"], ["volume"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.19
+{"FetchData": [["lastpx"], ["marketdata"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	200.24
+{"FetchData": [["lastpx"], ["marketdata"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	199.29
+{"FetchData": [["lastpx"], ["marketdata"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	199.18
+{"FetchData": [["lastpx"], ["side", "volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.55
+{"FetchData": [["lastpx"], ["side", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.6
+{"FetchData": [["lastpx"], ["volume", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.3
+{"FetchData": [["lastpx"], ["side", "volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.49
+{"FetchData": [["marketdata"], ["side"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.87
+{"FetchData": [["marketdata"], ["side"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.93
+{"FetchData": [["marketdata"], ["side"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.75
+{"FetchData": [["marketdata"], ["lastpx"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.82
+{"FetchData": [["marketdata"], ["lastpx"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	197.99
+{"FetchData": [["marketdata"], ["lastpx"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	196.45
+{"FetchData": [["marketdata"], ["volume"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.18
+{"FetchData": [["marketdata"], ["volume"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	197.03
+{"FetchData": [["marketdata"], ["volume"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	195.77
+{"FetchData": [["marketdata"], ["side", "lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.19
+{"FetchData": [["marketdata"], ["side", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.43
+{"FetchData": [["marketdata"], ["lastpx", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	197.15
+{"FetchData": [["marketdata"], ["side", "lastpx", "volume"]]}	finra	{"0": 0, "1": 1}	197.33
+{"FetchData": [["volume"], ["side"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.64
+{"FetchData": [["volume"], ["side"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.86
+{"FetchData": [["volume"], ["side"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.36
+{"FetchData": [["volume"], ["lastpx"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.64
+{"FetchData": [["volume"], ["lastpx"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	201.24
+{"FetchData": [["volume"], ["lastpx"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.16
+{"FetchData": [["volume"], ["marketdata"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	202.38
+{"FetchData": [["volume"], ["marketdata"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	200.78
+{"FetchData": [["volume"], ["marketdata"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	199.69
+{"FetchData": [["volume"], ["side", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.23
+{"FetchData": [["volume"], ["side", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.89
+{"FetchData": [["volume"], ["lastpx", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.53
+{"FetchData": [["volume"], ["side", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.47
+{"FetchData": [["side", "lastpx"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.91
+{"FetchData": [["side", "lastpx"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.56
+{"FetchData": [["side", "lastpx"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	202.29
+{"FetchData": [["side", "marketdata"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.58
+{"FetchData": [["side", "marketdata"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	198.52
+{"FetchData": [["side", "marketdata"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.03
+{"FetchData": [["side", "volume"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.34
+{"FetchData": [["side", "volume"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.55
+{"FetchData": [["side", "volume"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.88
+{"FetchData": [["lastpx", "marketdata"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.84
+{"FetchData": [["lastpx", "marketdata"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	197.24
+{"FetchData": [["lastpx", "marketdata"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	198.57
+{"FetchData": [["lastpx", "volume"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.0
+{"FetchData": [["lastpx", "volume"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.29
+{"FetchData": [["lastpx", "volume"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.64
+{"FetchData": [["marketdata", "volume"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.88
+{"FetchData": [["marketdata", "volume"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	196.77
+{"FetchData": [["marketdata", "volume"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.99
+{"FetchData": [["side", "lastpx", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	198.41
+{"FetchData": [["side", "lastpx", "volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.26
+{"FetchData": [["side", "marketdata", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.34
+{"FetchData": [["lastpx", "marketdata", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.65
+{"FetchData": [["side", "lastpx", "marketdata", "volume"]]}	finra	{"0": 0, "1": 1}	198.13
+{"FetchData": [["lastpx"], ["volume"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.28
+{"FetchData": [["lastpx"], ["volume"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.86
+{"FetchData": [["lastpx"], ["volume"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.78
+{"FetchData": [["lastpx"], ["trddate"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.16
+{"FetchData": [["lastpx"], ["trddate"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.87
+{"FetchData": [["lastpx"], ["trddate"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.11
+{"FetchData": [["lastpx"], ["marketdata"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.72
+{"FetchData": [["lastpx"], ["marketdata"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.48
+{"FetchData": [["lastpx"], ["marketdata"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	198.13
+{"FetchData": [["lastpx"], ["volume", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.17
+{"FetchData": [["lastpx"], ["volume", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.68
+{"FetchData": [["lastpx"], ["trddate", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	200.45
+{"FetchData": [["lastpx"], ["volume", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.56
+{"FetchData": [["volume"], ["trddate"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.26
+{"FetchData": [["volume"], ["trddate"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	201.72
+{"FetchData": [["volume"], ["trddate"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.19
+{"FetchData": [["volume"], ["lastpx"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.0
+{"FetchData": [["volume"], ["lastpx"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	201.36
+{"FetchData": [["volume"], ["lastpx"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.71
+{"FetchData": [["volume"], ["marketdata"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.41
+{"FetchData": [["volume"], ["marketdata"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	201.32
+{"FetchData": [["volume"], ["marketdata"], ["lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	198.78
+{"FetchData": [["volume"], ["trddate", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	199.49
+{"FetchData": [["volume"], ["trddate", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.13
+{"FetchData": [["volume"], ["lastpx", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.25
+{"FetchData": [["volume"], ["trddate", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.32
+{"FetchData": [["trddate"], ["volume"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.91
+{"FetchData": [["trddate"], ["volume"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.76
+{"FetchData": [["trddate"], ["volume"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.99
+{"FetchData": [["trddate"], ["lastpx"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.58
+{"FetchData": [["trddate"], ["lastpx"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.32
+{"FetchData": [["trddate"], ["lastpx"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.95
+{"FetchData": [["trddate"], ["marketdata"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.34
+{"FetchData": [["trddate"], ["marketdata"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	200.9
+{"FetchData": [["trddate"], ["marketdata"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	199.75
+{"FetchData": [["trddate"], ["volume", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.31
+{"FetchData": [["trddate"], ["volume", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.23
+{"FetchData": [["trddate"], ["lastpx", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.04
+{"FetchData": [["trddate"], ["volume", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.18
+{"FetchData": [["marketdata"], ["volume"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.91
+{"FetchData": [["marketdata"], ["volume"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.97
+{"FetchData": [["marketdata"], ["volume"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.17
+{"FetchData": [["marketdata"], ["lastpx"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.82
+{"FetchData": [["marketdata"], ["lastpx"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	198.88
+{"FetchData": [["marketdata"], ["lastpx"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	196.91
+{"FetchData": [["marketdata"], ["trddate"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.83
+{"FetchData": [["marketdata"], ["trddate"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.38
+{"FetchData": [["marketdata"], ["trddate"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.4
+{"FetchData": [["marketdata"], ["volume", "lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.17
+{"FetchData": [["marketdata"], ["volume", "trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.61
+{"FetchData": [["marketdata"], ["lastpx", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.82
+{"FetchData": [["marketdata"], ["volume", "lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	195.96
+{"FetchData": [["lastpx", "volume"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.28
+{"FetchData": [["lastpx", "volume"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.08
+{"FetchData": [["lastpx", "volume"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.78
+{"FetchData": [["lastpx", "trddate"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.09
+{"FetchData": [["lastpx", "trddate"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.53
+{"FetchData": [["lastpx", "trddate"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.46
+{"FetchData": [["lastpx", "marketdata"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.19
+{"FetchData": [["lastpx", "marketdata"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.32
+{"FetchData": [["lastpx", "marketdata"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	195.82
+{"FetchData": [["volume", "trddate"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.35
+{"FetchData": [["volume", "trddate"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.34
+{"FetchData": [["volume", "trddate"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.06
+{"FetchData": [["volume", "marketdata"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.7
+{"FetchData": [["volume", "marketdata"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.6
+{"FetchData": [["volume", "marketdata"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.0
+{"FetchData": [["trddate", "marketdata"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.91
+{"FetchData": [["trddate", "marketdata"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.47
+{"FetchData": [["trddate", "marketdata"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.66
+{"FetchData": [["lastpx", "volume", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.14
+{"FetchData": [["lastpx", "volume", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.47
+{"FetchData": [["lastpx", "trddate", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.98
+{"FetchData": [["volume", "trddate", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.4
+{"FetchData": [["lastpx", "volume", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.43
+{"FetchData": [["side"], ["volume"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.14
+{"FetchData": [["side"], ["volume"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	202.14
+{"FetchData": [["side"], ["volume"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.64
+{"FetchData": [["side"], ["trddate"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.72
+{"FetchData": [["side"], ["trddate"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.12
+{"FetchData": [["side"], ["trddate"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.9
+{"FetchData": [["side"], ["marketdata"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.43
+{"FetchData": [["side"], ["marketdata"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.9
+{"FetchData": [["side"], ["marketdata"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	199.58
+{"FetchData": [["side"], ["volume", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.83
+{"FetchData": [["side"], ["volume", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.65
+{"FetchData": [["side"], ["trddate", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.5
+{"FetchData": [["side"], ["volume", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.14
+{"FetchData": [["trddate"], ["side"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.47
+{"FetchData": [["trddate"], ["side"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	201.22
+{"FetchData": [["trddate"], ["side"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.53
+{"FetchData": [["trddate"], ["volume"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.55
+{"FetchData": [["trddate"], ["volume"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.88
+{"FetchData": [["trddate"], ["volume"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	202.65
+{"FetchData": [["trddate"], ["marketdata"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.69
+{"FetchData": [["trddate"], ["marketdata"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	200.06
+{"FetchData": [["trddate"], ["marketdata"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	200.07
+{"FetchData": [["trddate"], ["side", "volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.15
+{"FetchData": [["trddate"], ["side", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.71
+{"FetchData": [["trddate"], ["volume", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.86
+{"FetchData": [["trddate"], ["side", "volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.91
+{"FetchData": [["marketdata"], ["side"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.73
+{"FetchData": [["marketdata"], ["side"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.37
+{"FetchData": [["marketdata"], ["side"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	195.53
+{"FetchData": [["marketdata"], ["trddate"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.69
+{"FetchData": [["marketdata"], ["trddate"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.52
+{"FetchData": [["marketdata"], ["trddate"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	196.0
+{"FetchData": [["marketdata"], ["volume"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.22
+{"FetchData": [["marketdata"], ["volume"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.06
+{"FetchData": [["marketdata"], ["volume"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	196.95
+{"FetchData": [["marketdata"], ["side", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	198.02
+{"FetchData": [["marketdata"], ["side", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.2
+{"FetchData": [["marketdata"], ["trddate", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.94
+{"FetchData": [["marketdata"], ["side", "trddate", "volume"]]}	finra	{"0": 0, "1": 1}	196.44
+{"FetchData": [["volume"], ["side"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.77
+{"FetchData": [["volume"], ["side"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	201.88
+{"FetchData": [["volume"], ["side"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.03
+{"FetchData": [["volume"], ["trddate"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.53
+{"FetchData": [["volume"], ["trddate"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	201.76
+{"FetchData": [["volume"], ["trddate"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	203.11
+{"FetchData": [["volume"], ["marketdata"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.78
+{"FetchData": [["volume"], ["marketdata"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	201.14
+{"FetchData": [["volume"], ["marketdata"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	198.68
+{"FetchData": [["volume"], ["side", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.16
+{"FetchData": [["volume"], ["side", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.9
+{"FetchData": [["volume"], ["trddate", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.33
+{"FetchData": [["volume"], ["side", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.99
+{"FetchData": [["side", "trddate"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.98
+{"FetchData": [["side", "trddate"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.9
+{"FetchData": [["side", "trddate"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.8
+{"FetchData": [["side", "marketdata"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.67
+{"FetchData": [["side", "marketdata"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.79
+{"FetchData": [["side", "marketdata"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	194.71
+{"FetchData": [["side", "volume"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.68
+{"FetchData": [["side", "volume"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.41
+{"FetchData": [["side", "volume"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.85
+{"FetchData": [["trddate", "marketdata"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.79
+{"FetchData": [["trddate", "marketdata"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.79
+{"FetchData": [["trddate", "marketdata"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	197.28
+{"FetchData": [["trddate", "volume"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.72
+{"FetchData": [["trddate", "volume"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	198.99
+{"FetchData": [["trddate", "volume"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.66
+{"FetchData": [["marketdata", "volume"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.9
+{"FetchData": [["marketdata", "volume"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.91
+{"FetchData": [["marketdata", "volume"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	196.18
+{"FetchData": [["side", "trddate", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.19
+{"FetchData": [["side", "trddate", "volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.69
+{"FetchData": [["side", "marketdata", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.64
+{"FetchData": [["trddate", "marketdata", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	197.49
+{"FetchData": [["side", "trddate", "marketdata", "volume"]]}	finra	{"0": 0, "1": 1}	196.73
+{"FetchData": [["lastpx"], ["side"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.79
+{"FetchData": [["lastpx"], ["side"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	201.1
+{"FetchData": [["lastpx"], ["side"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	201.33
+{"FetchData": [["lastpx"], ["trddate"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.01
+{"FetchData": [["lastpx"], ["trddate"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	200.63
+{"FetchData": [["lastpx"], ["trddate"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.74
+{"FetchData": [["lastpx"], ["marketdata"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.3
+{"FetchData": [["lastpx"], ["marketdata"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	201.23
+{"FetchData": [["lastpx"], ["marketdata"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	198.58
+{"FetchData": [["lastpx"], ["side", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.27
+{"FetchData": [["lastpx"], ["side", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.11
+{"FetchData": [["lastpx"], ["trddate", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	200.31
+{"FetchData": [["lastpx"], ["side", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.93
+{"FetchData": [["side"], ["trddate"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.8
+{"FetchData": [["side"], ["trddate"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	201.29
+{"FetchData": [["side"], ["trddate"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	202.36
+{"FetchData": [["side"], ["lastpx"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	203.04
+{"FetchData": [["side"], ["lastpx"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.95
+{"FetchData": [["side"], ["lastpx"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.75
+{"FetchData": [["side"], ["marketdata"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	201.5
+{"FetchData": [["side"], ["marketdata"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	201.65
+{"FetchData": [["side"], ["marketdata"], ["lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	199.24
+{"FetchData": [["side"], ["trddate", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.07
+{"FetchData": [["side"], ["trddate", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	200.66
+{"FetchData": [["side"], ["lastpx", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.26
+{"FetchData": [["side"], ["trddate", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.28
+{"FetchData": [["trddate"], ["side"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.75
+{"FetchData": [["trddate"], ["side"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.4
+{"FetchData": [["trddate"], ["side"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.36
+{"FetchData": [["trddate"], ["lastpx"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.63
+{"FetchData": [["trddate"], ["lastpx"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	201.25
+{"FetchData": [["trddate"], ["lastpx"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.86
+{"FetchData": [["trddate"], ["marketdata"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.83
+{"FetchData": [["trddate"], ["marketdata"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	202.87
+{"FetchData": [["trddate"], ["marketdata"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.7
+{"FetchData": [["trddate"], ["side", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.29
+{"FetchData": [["trddate"], ["side", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.65
+{"FetchData": [["trddate"], ["lastpx", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	200.26
+{"FetchData": [["trddate"], ["side", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.39
+{"FetchData": [["marketdata"], ["side"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.38
+{"FetchData": [["marketdata"], ["side"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.71
+{"FetchData": [["marketdata"], ["side"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.99
+{"FetchData": [["marketdata"], ["lastpx"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.82
+{"FetchData": [["marketdata"], ["lastpx"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.9
+{"FetchData": [["marketdata"], ["lastpx"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	197.03
+{"FetchData": [["marketdata"], ["trddate"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.57
+{"FetchData": [["marketdata"], ["trddate"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	198.95
+{"FetchData": [["marketdata"], ["trddate"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.22
+{"FetchData": [["marketdata"], ["side", "lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.36
+{"FetchData": [["marketdata"], ["side", "trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.17
+{"FetchData": [["marketdata"], ["lastpx", "trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	196.97
+{"FetchData": [["marketdata"], ["side", "lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	196.02
+{"FetchData": [["lastpx", "side"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	199.63
+{"FetchData": [["lastpx", "side"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	199.49
+{"FetchData": [["lastpx", "side"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.93
+{"FetchData": [["lastpx", "trddate"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.32
+{"FetchData": [["lastpx", "trddate"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	200.73
+{"FetchData": [["lastpx", "trddate"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.48
+{"FetchData": [["lastpx", "marketdata"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.56
+{"FetchData": [["lastpx", "marketdata"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.93
+{"FetchData": [["lastpx", "marketdata"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	196.72
+{"FetchData": [["side", "trddate"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	199.23
+{"FetchData": [["side", "trddate"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.37
+{"FetchData": [["side", "trddate"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.85
+{"FetchData": [["side", "marketdata"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.74
+{"FetchData": [["side", "marketdata"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.62
+{"FetchData": [["side", "marketdata"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.34
+{"FetchData": [["trddate", "marketdata"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.5
+{"FetchData": [["trddate", "marketdata"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	197.18
+{"FetchData": [["trddate", "marketdata"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.7
+{"FetchData": [["lastpx", "side", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.6
+{"FetchData": [["lastpx", "side", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.54
+{"FetchData": [["lastpx", "trddate", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	197.64
+{"FetchData": [["side", "trddate", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.62
+{"FetchData": [["lastpx", "side", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	196.93
+{"FetchData": [["lastpx"], ["side"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.46
+{"FetchData": [["lastpx"], ["side"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.26
+{"FetchData": [["lastpx"], ["side"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	195.11
+{"FetchData": [["lastpx"], ["trddate"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.85
+{"FetchData": [["lastpx"], ["trddate"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.16
+{"FetchData": [["lastpx"], ["trddate"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	195.9
+{"FetchData": [["lastpx"], ["volume"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	195.75
+{"FetchData": [["lastpx"], ["volume"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.39
+{"FetchData": [["lastpx"], ["volume"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	195.88
+{"FetchData": [["lastpx"], ["side", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.09
+{"FetchData": [["lastpx"], ["side", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	195.28
+{"FetchData": [["lastpx"], ["trddate", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	195.19
+{"FetchData": [["lastpx"], ["side", "trddate", "volume"]]}	finra	{"0": 0, "1": 1}	193.38
+{"FetchData": [["side"], ["trddate"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.13
+{"FetchData": [["side"], ["trddate"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.32
+{"FetchData": [["side"], ["trddate"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	195.19
+{"FetchData": [["side"], ["lastpx"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.2
+{"FetchData": [["side"], ["lastpx"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.95
+{"FetchData": [["side"], ["lastpx"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	196.68
+{"FetchData": [["side"], ["volume"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.08
+{"FetchData": [["side"], ["volume"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.26
+{"FetchData": [["side"], ["volume"], ["lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	194.62
+{"FetchData": [["side"], ["trddate", "lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.93
+{"FetchData": [["side"], ["trddate", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.27
+{"FetchData": [["side"], ["lastpx", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	195.47
+{"FetchData": [["side"], ["trddate", "lastpx", "volume"]]}	finra	{"0": 0, "1": 1}	192.96
+{"FetchData": [["trddate"], ["side"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.1
+{"FetchData": [["trddate"], ["side"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.37
+{"FetchData": [["trddate"], ["side"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	195.51
+{"FetchData": [["trddate"], ["lastpx"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.02
+{"FetchData": [["trddate"], ["lastpx"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.79
+{"FetchData": [["trddate"], ["lastpx"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	194.23
+{"FetchData": [["trddate"], ["volume"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.44
+{"FetchData": [["trddate"], ["volume"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	197.0
+{"FetchData": [["trddate"], ["volume"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.27
+{"FetchData": [["trddate"], ["side", "lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.05
+{"FetchData": [["trddate"], ["side", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.27
+{"FetchData": [["trddate"], ["lastpx", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	194.58
+{"FetchData": [["trddate"], ["side", "lastpx", "volume"]]}	finra	{"0": 0, "1": 1}	192.89
+{"FetchData": [["volume"], ["side"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.8
+{"FetchData": [["volume"], ["side"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.85
+{"FetchData": [["volume"], ["side"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	195.99
+{"FetchData": [["volume"], ["lastpx"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.11
+{"FetchData": [["volume"], ["lastpx"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	197.92
+{"FetchData": [["volume"], ["lastpx"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	196.94
+{"FetchData": [["volume"], ["trddate"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.44
+{"FetchData": [["volume"], ["trddate"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	198.35
+{"FetchData": [["volume"], ["trddate"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	194.67
+{"FetchData": [["volume"], ["side", "lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	195.2
+{"FetchData": [["volume"], ["side", "trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.61
+{"FetchData": [["volume"], ["lastpx", "trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	196.01
+{"FetchData": [["volume"], ["side", "lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	193.36
+{"FetchData": [["lastpx", "side"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.17
+{"FetchData": [["lastpx", "side"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.72
+{"FetchData": [["lastpx", "side"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	193.04
+{"FetchData": [["lastpx", "trddate"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.81
+{"FetchData": [["lastpx", "trddate"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	195.48
+{"FetchData": [["lastpx", "trddate"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	194.14
+{"FetchData": [["lastpx", "volume"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.28
+{"FetchData": [["lastpx", "volume"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	195.86
+{"FetchData": [["lastpx", "volume"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	192.92
+{"FetchData": [["side", "trddate"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.61
+{"FetchData": [["side", "trddate"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.99
+{"FetchData": [["side", "trddate"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	192.33
+{"FetchData": [["side", "volume"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.25
+{"FetchData": [["side", "volume"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.24
+{"FetchData": [["side", "volume"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	193.66
+{"FetchData": [["trddate", "volume"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.0
+{"FetchData": [["trddate", "volume"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	195.95
+{"FetchData": [["trddate", "volume"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	192.4
+{"FetchData": [["lastpx", "side", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	192.09
+{"FetchData": [["lastpx", "side", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	192.09
+{"FetchData": [["lastpx", "trddate", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	191.68
+{"FetchData": [["side", "trddate", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	192.83
+{"FetchData": [["lastpx", "side", "trddate", "volume"]]}	finra	{"0": 0, "1": 1}	190.97
+{"FetchData": [["volume"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.22
+{"FetchData": [["volume"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.09
+{"FetchData": [["volume"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.39
+{"FetchData": [["lastpx"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	202.79
+{"FetchData": [["lastpx"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.59
+{"FetchData": [["lastpx"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.56
+{"FetchData": [["marketdata"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.18
+{"FetchData": [["marketdata"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	198.09
+{"FetchData": [["marketdata"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	197.17
+{"FetchData": [["volume", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.13
+{"FetchData": [["volume", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.42
+{"FetchData": [["lastpx", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.43
+{"FetchData": [["volume", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.35
+{"FetchData": [["side"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.65
+{"FetchData": [["side"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	200.17
+{"FetchData": [["side"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.98
+{"FetchData": [["volume"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.81
+{"FetchData": [["volume"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	198.93
+{"FetchData": [["volume"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	200.4
+{"FetchData": [["marketdata"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.86
+{"FetchData": [["marketdata"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.46
+{"FetchData": [["marketdata"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	196.71
+{"FetchData": [["side", "volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.64
+{"FetchData": [["side", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	197.37
+{"FetchData": [["volume", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	196.67
+{"FetchData": [["side", "volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.25
+{"FetchData": [["side"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	199.46
+{"FetchData": [["side"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	199.12
+{"FetchData": [["side"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.26
+{"FetchData": [["lastpx"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.45
+{"FetchData": [["lastpx"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	199.36
+{"FetchData": [["lastpx"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.2
+{"FetchData": [["marketdata"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.49
+{"FetchData": [["marketdata"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	196.85
+{"FetchData": [["marketdata"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.58
+{"FetchData": [["side", "lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.51
+{"FetchData": [["side", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.11
+{"FetchData": [["lastpx", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	197.57
+{"FetchData": [["side", "lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.15
+{"FetchData": [["side"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.21
+{"FetchData": [["side"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.27
+{"FetchData": [["side"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	193.29
+{"FetchData": [["lastpx"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.37
+{"FetchData": [["lastpx"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	196.83
+{"FetchData": [["lastpx"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	194.11
+{"FetchData": [["volume"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.01
+{"FetchData": [["volume"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	196.23
+{"FetchData": [["volume"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	192.23
+{"FetchData": [["side", "lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	193.67
+{"FetchData": [["side", "volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	193.6
+{"FetchData": [["lastpx", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	192.79
+{"FetchData": [["side", "lastpx", "volume"]]}	finra	{"0": 0, "1": 1}	191.1
+{"FetchData": [["volume"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.51
+{"FetchData": [["volume"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	200.05
+{"FetchData": [["volume"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.63
+{"FetchData": [["trddate"], ["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.36
+{"FetchData": [["trddate"], ["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	199.4
+{"FetchData": [["trddate"], ["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.58
+{"FetchData": [["marketdata"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.27
+{"FetchData": [["marketdata"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.52
+{"FetchData": [["marketdata"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	196.48
+{"FetchData": [["volume", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.62
+{"FetchData": [["volume", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.15
+{"FetchData": [["trddate", "marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.06
+{"FetchData": [["volume", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	196.46
+{"FetchData": [["lastpx"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	201.94
+{"FetchData": [["lastpx"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.46
+{"FetchData": [["lastpx"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.09
+{"FetchData": [["trddate"], ["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.87
+{"FetchData": [["trddate"], ["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	198.8
+{"FetchData": [["trddate"], ["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.62
+{"FetchData": [["marketdata"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.23
+{"FetchData": [["marketdata"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.94
+{"FetchData": [["marketdata"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	196.13
+{"FetchData": [["lastpx", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	196.89
+{"FetchData": [["lastpx", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.39
+{"FetchData": [["trddate", "marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	197.57
+{"FetchData": [["lastpx", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	196.67
+{"FetchData": [["lastpx"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.79
+{"FetchData": [["lastpx"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.53
+{"FetchData": [["lastpx"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	193.88
+{"FetchData": [["volume"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.99
+{"FetchData": [["volume"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.52
+{"FetchData": [["volume"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	192.9
+{"FetchData": [["trddate"], ["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.33
+{"FetchData": [["trddate"], ["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.8
+{"FetchData": [["trddate"], ["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	193.19
+{"FetchData": [["lastpx", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.71
+{"FetchData": [["lastpx", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.39
+{"FetchData": [["volume", "trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	194.38
+{"FetchData": [["lastpx", "volume", "trddate"]]}	finra	{"0": 0, "1": 1}	190.78
+{"FetchData": [["side"], ["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.93
+{"FetchData": [["side"], ["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.29
+{"FetchData": [["side"], ["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	199.34
+{"FetchData": [["trddate"], ["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	200.32
+{"FetchData": [["trddate"], ["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	198.28
+{"FetchData": [["trddate"], ["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	198.65
+{"FetchData": [["marketdata"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	198.45
+{"FetchData": [["marketdata"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	198.28
+{"FetchData": [["marketdata"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	197.14
+{"FetchData": [["side", "trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.96
+{"FetchData": [["side", "marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.76
+{"FetchData": [["trddate", "marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	198.47
+{"FetchData": [["side", "trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.82
+{"FetchData": [["side"], ["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.51
+{"FetchData": [["side"], ["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.8
+{"FetchData": [["side"], ["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	194.38
+{"FetchData": [["trddate"], ["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.26
+{"FetchData": [["trddate"], ["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	198.08
+{"FetchData": [["trddate"], ["side", "volume"]]}	finra	{"0": 0, "1": 1}	193.92
+{"FetchData": [["volume"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	197.38
+{"FetchData": [["volume"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	196.61
+{"FetchData": [["volume"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	193.63
+{"FetchData": [["side", "trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	194.14
+{"FetchData": [["side", "volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.58
+{"FetchData": [["trddate", "volume"], ["side"]]}	finra	{"0": 0, "1": 1}	194.26
+{"FetchData": [["side", "trddate", "volume"]]}	finra	{"0": 0, "1": 1}	191.34
+{"FetchData": [["lastpx"], ["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.92
+{"FetchData": [["lastpx"], ["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	195.75
+{"FetchData": [["lastpx"], ["side", "trddate"]]}	finra	{"0": 0, "1": 1}	194.01
+{"FetchData": [["side"], ["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.81
+{"FetchData": [["side"], ["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.0
+{"FetchData": [["side"], ["trddate", "lastpx"]]}	finra	{"0": 0, "1": 1}	193.7
+{"FetchData": [["trddate"], ["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	195.46
+{"FetchData": [["trddate"], ["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	196.61
+{"FetchData": [["trddate"], ["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	193.63
+{"FetchData": [["lastpx", "side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.33
+{"FetchData": [["lastpx", "trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	193.79
+{"FetchData": [["side", "trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	192.57
+{"FetchData": [["lastpx", "side", "trddate"]]}	finra	{"0": 0, "1": 1}	190.17
+{"FetchData": [["volume"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.91
+{"FetchData": [["marketdata"], ["volume"]]}	finra	{"0": 0, "1": 1}	196.08
+{"FetchData": [["volume", "marketdata"]]}	finra	{"0": 0, "1": 1}	196.03
+{"FetchData": [["lastpx"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.03
+{"FetchData": [["marketdata"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	196.11
+{"FetchData": [["lastpx", "marketdata"]]}	finra	{"0": 0, "1": 1}	195.69
+{"FetchData": [["volume"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	193.79
+{"FetchData": [["lastpx"], ["volume"]]}	finra	{"0": 0, "1": 1}	195.02
+{"FetchData": [["volume", "lastpx"]]}	finra	{"0": 0, "1": 1}	190.17
+{"FetchData": [["side"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	198.37
+{"FetchData": [["marketdata"], ["side"]]}	finra	{"0": 0, "1": 1}	196.04
+{"FetchData": [["side", "marketdata"]]}	finra	{"0": 0, "1": 1}	197.12
+{"FetchData": [["side"], ["volume"]]}	finra	{"0": 0, "1": 1}	194.65
+{"FetchData": [["volume"], ["side"]]}	finra	{"0": 0, "1": 1}	195.69
+{"FetchData": [["side", "volume"]]}	finra	{"0": 0, "1": 1}	189.52
+{"FetchData": [["side"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	194.57
+{"FetchData": [["lastpx"], ["side"]]}	finra	{"0": 0, "1": 1}	193.77
+{"FetchData": [["side", "lastpx"]]}	finra	{"0": 0, "1": 1}	192.17
+{"FetchData": [["trddate"], ["marketdata"]]}	finra	{"0": 0, "1": 1}	197.69
+{"FetchData": [["marketdata"], ["trddate"]]}	finra	{"0": 0, "1": 1}	196.69
+{"FetchData": [["trddate", "marketdata"]]}	finra	{"0": 0, "1": 1}	196.84
+{"FetchData": [["volume"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.3
+{"FetchData": [["trddate"], ["volume"]]}	finra	{"0": 0, "1": 1}	194.29
+{"FetchData": [["volume", "trddate"]]}	finra	{"0": 0, "1": 1}	192.3
+{"FetchData": [["lastpx"], ["trddate"]]}	finra	{"0": 0, "1": 1}	194.42
+{"FetchData": [["trddate"], ["lastpx"]]}	finra	{"0": 0, "1": 1}	194.01
+{"FetchData": [["lastpx", "trddate"]]}	finra	{"0": 0, "1": 1}	191.45
+{"FetchData": [["side"], ["trddate"]]}	finra	{"0": 0, "1": 1}	193.0
+{"FetchData": [["trddate"], ["side"]]}	finra	{"0": 0, "1": 1}	193.74
+{"FetchData": [["side", "trddate"]]}	finra	{"0": 0, "1": 1}	191.38
+{"FetchData": [["marketdata"]]}	finra	{"0": 0, "1": 1}	194.93
+{"FetchData": [["volume"]]}	finra	{"0": 0, "1": 1}	189.27
+{"FetchData": [["lastpx"]]}	finra	{"0": 0, "1": 1}	191.54
+{"FetchData": [["side"]]}	finra	{"0": 0, "1": 1}	190.93
+{"FetchData": [["trddate"]]}	finra	{"0": 0, "1": 1}	191.26
+{}	finra	{"0": 0, "1": 1}	184.43
