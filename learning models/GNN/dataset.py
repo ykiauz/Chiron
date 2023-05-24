@@ -23,7 +23,8 @@ metrics = {
     "pi": [35,117,48,78,2,2,16,8.2885,1.8281,1.0046,5.0E-4,4.21,0.96,0.0,0.0,0.0,0.01213],
     "network-io": [36,111,101,135,3,1,41,7.931,1.6034,0.4758,4.0E-4,88.45,9.16,0.0,0.0,35.17,0.056697],
     # "marketdata": [29,109,34,61,2,1,14,5.3015,1.6325,0.2137,3.0E-4,9.15,3.05,0.56,0.0,0.05,0.3939],
-    "marketdata2": [9,124,29,58,1,1,14,9.2538,1.5546,0.0877,4.0E-4,14.69,2.54,0.0,0.0,0.01,0.1799],
+    #"marketdata2": [9,124,29,58,1,1,14,9.2538,1.5546,0.0877,4.0E-4,14.69,2.54,0.0,0.0,0.01,0.1799],
+    "marketdata2": [1440.0, 89.0, 31.0, 67.0, 2.0, 1.0, 14.0, 0.0106, 1.6883, 0.6293, 0.0005, 23.58, 6.16, 0.59, 0.0, 0.05, 0.09229],
     # "marketdata3": [8,115,22,48,1,1,9,5.7135,1.6901,0.0841,7.0E-4,17.81,2.66,0.0,0.0,0.01,0.238538],
     "lastpx": [25,118,47,89,3,1,21,8.1895,1.8048,0.6317,3.0E-4,6.9,2.23,0.0,0.0,0.0, 0.000129],
     "side": [17,104,28,55,1,1,14,8.3467,1.6887,0.6311,2.0E-4,5.73,1.86,0.0,0.0,0.0,0.000147],
@@ -58,29 +59,33 @@ metrics = {
 #     for i in range(16):
 #         metrics[func_name][i] = metrics[func_name][i] * metrics[func_name][-1]
 
-min_max_scalar = preprocessing.MinMaxScaler()
+# min_max_scalar = preprocessing.MinMaxScaler()
 
 # for i in range(16):
-for i in range(17):
-    keys = metrics.keys()
-    values = [[v[i]] for v in metrics.values()]
-    nor_values = min_max_scalar.fit_transform(values)
+# for i in range(17):
+#     keys = metrics.keys()
+#     values = [[v[i]] for v in metrics.values()]
+#     nor_values = min_max_scalar.fit_transform(values)
 
-    for j, k in enumerate(keys):
-        metrics[k][i] = nor_values[j][0]
+#     for j, k in enumerate(keys):
+#         metrics[k][i] = nor_values[j][0]
 
 
 # for k,v in metrics.items():
 #     print(k, v)
 
-num_dimensions = 56
+# num_dimensions = 56
+# num_dimensions = 55
+num_dimensions = 11
 
-stage_node_index_start = 25
-partitions_node_index_start = 30
+# stage_node_index_start = 25
+# partitions_node_index_start = 30
+
+partitions_node_index_start = 25
+stage_node_index_start = 50
+
 
 workflow_infos = {}
-workflow_stages = {}
-
 
 # suppose all workflow have 5 stages, each stage have 5 function
 # fill workflow with fake node (metrics is set to [0] * 17)
@@ -88,50 +93,39 @@ def get_adjacency(workflow):
     stateName = workflow["StartAt"]
     state = workflow["States"][stateName]
     over = False
-    current = 0
-    stages = {}
-    index_stages = []
-    edges = []
+    stage_nodes = []
+    nodes_stage = {}
     resources = {}
-    indexs = {}
-    tasks_per_stage = 5
-    while not over:
-        # edges.append((num_dimensions-1, stage_node_index_start+len(index_stages)))
-        index_stages.append(stateName)
-        current_num_stages = len(index_stages)
+    index_nodes = []
+    nodes_index = {}
+    stage_index = -1
+    while True:
+        stage_index += 1
         if state["Type"] == "Task":
-            stages[stateName] = stateName
             resources[stateName] = state["Resource"]
-            # current_num_nodes = len(indexs)
-            # indexs[stateName] = tasks_per_stage * (current_num_stages-1)
-            indexs[stateName] = (current_num_stages-1, 0)
+
+            index_nodes.append(stateName)
+            nodes_index[stateName] = len(index_nodes) - 1
+            stage_nodes.append([len(index_nodes) - 1])
+            nodes_stage[stateName] = stage_index
         elif state["Type"] == "Parallel":
+            temp = []
             for branch_index, branch in enumerate(state["Branches"]):
-                stages[branch["StartAt"]] = stateName
                 resources[branch["StartAt"]] = branch["States"][branch["StartAt"]]["Resource"]
-                # current_num_nodes = len(indexs)
-                # indexs[branch["StartAt"]] = tasks_per_stage * (current_num_stages-1) + branch_index
-                indexs[branch["StartAt"]] = (current_num_stages-1, branch_index)
+
+                index_nodes.append(branch["StartAt"])
+                nodes_index[branch["StartAt"]] = len(index_nodes) - 1
+                temp.append(len(index_nodes) - 1)
+                nodes_stage[branch["StartAt"]] = stage_index
+            stage_nodes.append(temp)
         if "End" in state:
-            over = True
+            break
         else:
             stateName = state["Next"]
             state = workflow["States"][stateName]
 
-    adjacency = [0] * num_dimensions
-    adjacency = [[0] * num_dimensions for _ in adjacency]
 
-    # global node to stage node
-    for i in range(5):
-        adjacency[-1][stage_node_index_start+i] = 1
-
-    # self loop
-    # for i in range(num_dimensions):
-    #     adjacency[i][i] = 1
-        # global node
-        # adjacency[num_dimensions-1][i] = 1
-
-    return adjacency, indexs, resources, stages, index_stages
+    return stage_nodes, nodes_stage, resources, index_nodes, nodes_index
 
     # print(indexs)
     # print(edges)
@@ -143,6 +137,7 @@ def prepare_tensors(gs, targets=[0]):
     features = []
     adjacencies = []
     stages = {}
+    stage_nodes_lists = []
     
     for g in gs:
         partitions = {}
@@ -164,162 +159,43 @@ def prepare_tensors(gs, targets=[0]):
 
         if workflow_name in workflow_infos:
             info = workflow_infos[workflow_name]
-            indexs, resources, index_stages = info["indexs"], info["resources"], info["index_stages"]
-            adjacency = copy.deepcopy(info["adjacency"])
-            stages = workflow_stages[workflow_name]
+            stage_nodes, nodes_stage, resources, index_nodes, nodes_index = \
+                info["stage_nodes"], info["nodes_stage"], info["resources"], info["index_nodes"], info["nodes_index"]
         else:
             workflow = json.loads(open("workflows/%s.json" % (workflow_name)).read())
-            adjacency, indexs, resources, stages, index_stages = get_adjacency(workflow)
+            stage_nodes, nodes_stage, resources, index_nodes, nodes_index = get_adjacency(workflow)
             workflow_infos[workflow_name] = {
-                "adjacency": copy.deepcopy(adjacency),
-                "indexs": indexs,
+                "stage_nodes": stage_nodes,
+                "nodes_stage": nodes_stage,
                 "resources": resources,
-                "index_stages": index_stages
+                "index_nodes": index_nodes,
+                "nodes_index": nodes_index
             }
-            workflow_stages[workflow_name] = stages
 
-        feature = [0] * num_dimensions
-        
-        # feature = [[0] * 18 for _ in feature]
-        feature = [np.zeros(19, dtype=int) for _ in feature]
+        adjacency = np.zeros((num_dimensions, num_dimensions))
+        feature = np.zeros((num_dimensions, 17))
+
+        feature[-1] = np.array(metrics["process"].copy())
 
         policy = json.loads(tg)
         for v in policy.values():
             for i, groups in enumerate(v):
                 for f in groups:
                     partitions[f] = i+1
+                    adjacency[nodes_index[f]][-1] = 1
 
         for f in resources:
             if f not in partitions:
                 partitions[f] = 0
 
-        # num_stages = len(set(stages.values()))
-
-        tasks_per_stage = 5
-
         # fill task node
-        task_node_start_index = stage_start_index * 5
-        for v, k in indexs.items():
-            temp_feature = metrics[resources[v]].copy()
-            temp_feature.append(1)
-            temp_feature.append(0)
-            # fill fake node if no start from stage 0
-            # if k[0] in stage_map:
-            #     task_node_index = tasks_per_stage * stage_map[k[0]] + k[1]
-            # else:
-            #     task_node_index = tasks_per_stage * k[0] + k[1]
+        for f, index in nodes_index.items():
+            temp_feature = metrics[resources[f]].copy()
+            feature[index] = np.array(temp_feature.copy())
 
-            task_node_index = tasks_per_stage * stage_map[str(k[0])] + k[1]
-
-            feature[task_node_index] = np.array(temp_feature.copy())
-
-        # fill fake stage node
-        min_stage_index = min(stage_map.values())
-        # if 0 in stage_map and stage_map[0] > 0:
-        # for stage_index in range(stage_map[0]):
-        for stage_index in range(min_stage_index):
-            # stage node to partition node 0
-            adjacency[stage_node_index_start+stage_index][partitions_node_index_start + stage_index * 5] = 1
-
-            # partition node 0 to all fake stage task node
-            stage_task_start_index = 5 * stage_index
-            for i in range(stage_task_start_index, stage_task_start_index+5):
-                adjacency[partitions_node_index_start + stage_index * 5][i] = 1
-
-        # if len(stage_map) > 0:
-        #     max_stage_index = max(len(index_stages), max(stage_map.values())+1)
-        # else:
-        #     max_stage_index = len(index_stages)
-        max_stage_index = max(stage_map.values()) + 1
-        # for stage_index in range(stage_start_index+len(index_stages), 5):
-        for stage_index in range(max_stage_index, 5):
-            # stage node to partition node 0
-            adjacency[stage_node_index_start+stage_index][partitions_node_index_start + stage_index * 5] = 1
-
-            # partition node 0 to all fake stage task node
-            stage_task_start_index = 5 * stage_index
-            for i in range(stage_task_start_index, stage_task_start_index+5):
-                adjacency[partitions_node_index_start + stage_index * 5][i] = 1
-
-        # fill real stage node
-        for stage_index, stage_name in enumerate(index_stages):
-            stage_fs = [f for f in partitions if stages[f] == stage_name]
-            stage_fs_partitions = [partitions[f] for f in stage_fs]
-
-            num_stages_partitions = max(stage_fs_partitions)+1
-
-            # stage_fs_feature_list = []
-            # for f in stage_fs:
-            #     stage_fs_feature_list.append(metrics[resources[f]])
-
-            # stage_fs_feature = np.sum(stage_fs_feature_list, axis=0)
-            
-            # stage_fs_feature = np.append(stage_fs_feature, [num_stages_partitions])
-
-            # feature[stage_node_index_start+stage_index] = stage_fs_feature.copy()
-
-            # fill partitions node
-            # current_stage_index = stage_index
-            # if current_stage_index in stage_map:
-            #     current_stage_index = stage_map[current_stage_index]
-
-            current_stage_index = stage_map[str(stage_index)]
-
-            current_partitions_node_index_start = partitions_node_index_start + current_stage_index * 5
-
-            # fill fake stage task node
-            for i in range(len(stage_fs), 5):
-                # fake partition 0 to stage task node
-                adjacency[current_partitions_node_index_start][current_stage_index*5+i] = 1
-
-            max_partition_index = 0
-            max_partition_latency = 0
-            for partition_index in range(num_stages_partitions):
-                # stage node to partition node
-                adjacency[stage_node_index_start+current_stage_index][current_partitions_node_index_start+partition_index] = 1
-
-                current_partition_latency = 0
-
-                # partition node to task node
-                partition_fs = [f for f in stage_fs if partitions[f] == partition_index]
-                for f in partition_fs:
-                    # adjacency[current_partitions_node_index_start+partition_index][indexs[f]+task_node_start_index] = 1
-                    adjacency[current_partitions_node_index_start+partition_index][tasks_per_stage * current_stage_index + indexs[f][1]] = 1
-                    current_partition_latency += metrics[resources[f]][-1]
-
-                # partition node self loop
-                if partition_index > 0:
-                    adjacency[current_partitions_node_index_start+partition_index][current_partitions_node_index_start+partition_index] = 1
-                    partition_fs_feature = metrics["process"].copy()
-                    partition_fs_feature.append(len(partition_fs))
-                    partition_fs_feature.append(0)
-
-                    current_partition_latency += metrics["process"][-1]
-                else:
-                    partition_fs_feature = [0] * 19
-                    partition_fs_feature[-2] = len(partition_fs)
-
-                if current_partition_latency > max_partition_latency:
-                    max_partition_latency = current_partition_latency
-                    max_partition_index = partition_index
-
-                # partition_fs_feature_list = []
-                # for f in partition_fs:
-                #     partition_fs_feature_list.append(metrics[resources[f]])
-
-                # partition_fs_feature = np.sum(partition_fs_feature_list, axis=0)
-                # # partition_fs_feature.append(len(partition_fs))
-                # partition_fs_feature = np.append(partition_fs_feature, [len(partition_fs)])
-
-                feature[current_partitions_node_index_start+partition_index] = partition_fs_feature.copy()
-
-            feature[current_partitions_node_index_start+max_partition_index][-1] = max_partition_latency
-        # fill global node
-        # stage_features_list = feature[stage_node_index_start:partitions_node_index_start]
-        # global_node_feature = np.sum(stage_features_list, axis=0)
-        # global_node_feature[-1] = 1
-        
-        # feature[-1] = global_node_feature.copy()
+            for ff in partitions:
+                if partitions[f] == partitions[ff] and nodes_stage[f] == nodes_stage[ff]:
+                    adjacency[index][nodes_index[ff]] = 1
 
         adjacencies.append(adjacency)
 
@@ -328,6 +204,8 @@ def prepare_tensors(gs, targets=[0]):
         # exit(0)
 
         features.append(feature)
+
+        stage_nodes_lists.append(stage_nodes)
 
     adjacencies = torch.DoubleTensor(np.array(adjacencies))
 
@@ -342,7 +220,7 @@ def prepare_tensors(gs, targets=[0]):
         # labels.append([float(i)])
     labels = torch.DoubleTensor(labels)
 
-    return adjacencies, features, labels
+    return adjacencies, features, stage_nodes_lists, labels
 
 
 class Dataset():

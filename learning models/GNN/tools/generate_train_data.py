@@ -68,6 +68,9 @@ for target_workflow_name in workflow_names:
     for l in lines:
         [policy, workflow_name, latency] = l.split("\t")
 
+        #if workflow_name == "finra":
+        #    continue
+
         info = workflow_infos[workflow_name]
         resources = info["resources"]
         stages = workflow_stages[workflow_name]
@@ -79,8 +82,9 @@ for target_workflow_name in workflow_names:
             for index, stage_info in enumerate(stages):
                 temp_map[stage_info[0]] = index + i
 
-            res.append("\t".join([policy, workflow_name, json.dumps(temp_map), latency]))
+            # print(temp_map)
 
+            res.append("\t".join([policy, workflow_name, json.dumps(temp_map), latency]))
 
     with open("../lats/lats_no_%s_stru.csv" % (target_workflow_name), "w") as f:
         f.writelines(res)

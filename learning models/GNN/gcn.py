@@ -22,14 +22,24 @@ from torch.nn.modules.module import Module
 from torch.nn.parameter import Parameter
 
 import utils
+# import traceback
 
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 
 class GraphConvolution(Module):
-    def __init__(self, in_features, out_features, bias=True, weight_init='thomas', bias_init='thomas'):
+    def __init__(self, in_features, out_features, bias=True, weight_init='thomas', bias_init='thomas', weight=True):
         super(GraphConvolution, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
-        self.weight = Parameter(torch.DoubleTensor(in_features, out_features))
+        
+        if weight:
+            self.weight = Parameter(torch.DoubleTensor(in_features, out_features))
+        else:
+            self.register_parameter('weight', None)
+
+        self.max_pooling_layer = nn.MaxPool2d((5,1), stride=(5,1), return_indices=True)
+
         if bias:
             self.bias = Parameter(torch.DoubleTensor(out_features))
         else:
@@ -43,11 +53,32 @@ class GraphConvolution(Module):
         utils.init_tensor(self.weight, self.weight_init, 'relu')
         utils.init_tensor(self.bias, self.bias_init, 'relu')
 
-    def forward(self, adjacency, features):
+    def forward(self, adjacency, features, max_pooling=False, stage_nodes_lists=None):
+        if max_pooling:
+            if self.bias is not None:
+                output = features + self.bias
+            else:
+                output = features
+
+            pooling_feature_list = []
+            for index, stage_nodes in enumerate(stage_nodes_lists):
+                current_feature_list = []
+                for stage_node in stage_nodes:
+                    stage_features = output[index, stage_node]
+                    stage_features_sum = torch.sum(stage_features, dim=1)
+                    max_index = torch.argmax(stage_features_sum)
+                    current_feature_list.append(output[index, [stage_node[max_index]]])
+                for _ in range(len(current_feature_list), 5):
+                    current_feature_list.append(torch.tensor([[0.0]*17]))
+
+                pooling_feature_list.append(torch.cat(current_feature_list))
+
+            return torch.stack(pooling_feature_list, 0)
+
         support = torch.matmul(features, self.weight)
         output = torch.bmm(adjacency, support)
         if self.bias is not None:
-            return output + self.bias
+            return output + self.bias            
         else:
             return output
 
@@ -72,9 +103,17 @@ class GCN(Module):
         self.nlayer = num_layers
         self.nhid = num_hidden
         self.dropout_ratio = dropout_ratio
-        self.gc = nn.ModuleList([GraphConvolution(self.nfeat if i==0 else self.nhid, self.nhid, bias=True, weight_init=weight_init, bias_init=bias_init) for i in range(self.nlayer)])
+        self.gc = nn.ModuleList([GraphConvolution(self.nfeat if i==0 else self.nhid, self.nhid, bias=True, weight_init=weight_init, bias_init=bias_init, weight=(False if i==1 else True)) for i in range(self.nlayer)])
         self.bn = nn.ModuleList([nn.LayerNorm(self.nhid).double() for i in range(self.nlayer)])
         self.relu = nn.ModuleList([nn.ReLU().double() for i in range(self.nlayer)])
+
+        final_adjacency = [0] * 5
+        final_adjacency = [[0] * 5 for _ in final_adjacency]
+
+        for i in range(5):
+            final_adjacency[0][i] = 1
+        self.final_adjacency = torch.DoubleTensor(final_adjacency).to(device)
+
         if not binary_classifier:
             self.fc = nn.Linear(self.nhid + augments, 1).double()
         else:
@@ -94,12 +133,30 @@ class GCN(Module):
 
         self.binary_classifier = binary_classifier
 
-    def forward_single_model(self, adjacency, features):
+    def forward_single_model(self, adjacency, features, stage_nodes_lists=None):
+        #print("=====Layer 1=====")
         x = self.relu[0](self.bn[0](self.gc[0](adjacency, features)))
+        #print(x)
         x = self.dropout[0](x)
-        for i in range(1,self.nlayer):
-            x = self.relu[i](self.bn[i](self.gc[i](adjacency, x)))
-            x = self.dropout[i](x)
+
+        #print("=====Layer 2=====")
+        x = self.relu[1](self.bn[1](self.gc[1](adjacency, x, max_pooling=True, stage_nodes_lists=stage_nodes_lists)))
+        #print(x)
+        x = self.dropout[1](x)
+
+        # print(x)
+
+        #print("=====Layer 3=====")
+        x = self.relu[2](self.bn[2](self.gc[2](self.final_adjacency.repeat(x.shape[0], 1, 1), x)))
+        #print(x)
+        x = self.dropout[2](x)
+
+        #exit(0)
+        # print(x)
+
+        # for i in range(1,self.nlayer):
+        #     x = self.relu[i](self.bn[i](self.gc[i](adjacency, x)))
+        #     x = self.dropout[i](x)
 
         return x
 
@@ -130,23 +187,11 @@ class GCN(Module):
         x = self.final_act(x)
         return x
 
-    def forward(self, adjacency, features, augments=None):
+    def forward(self, adjacency, features, stage_nodes_lists, augments=None):
         if not self.binary_classifier:
-            x = self.forward_single_model(adjacency, features)
+            x = self.forward_single_model(adjacency, features, stage_nodes_lists)
 
-            # partition_xs = x[:,25:]
-            # x = partition_xs.mean(axis=1,keepdim=True)
-
-            # x = x[:,25:].mean(axis=1)
-            # x = x.mean(axis=1)
-            
-            # x = x[:,0] # use global node
-            # x = x[:,-1] # use global node
-            # print(x)
-
-            # return self.fc(x[:,25:]).max(axis=1).values
-
-            return self.fc(x[:, -1])
+            return self.fc(x[:, 0])
             return self.fc(x).mean(axis=1)
             # return self.fc(x).max(axis=1).values
 

@@ -80,6 +80,7 @@ for target_workflow_name in workflow_names:
 
         res.append("\t".join([policy, workflow_name, json.dumps(temp_map), latency]))
 
+
     with open("../lats/lats_%s_stru.csv" % (target_workflow_name), "w") as f:
         f.writelines(res)
 

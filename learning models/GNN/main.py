@@ -9,8 +9,13 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 
+import argparse
+
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
+
 def _train(model, gs, latencies, optimizer, criterion):
-    adjacency, features, latency = dataset_mod.prepare_tensors(gs, latencies)
+    adjacency, features, stage_nodes_lists, latency = dataset_mod.prepare_tensors(gs, latencies)
 
     # print(adjacency)
     # print(features)
@@ -18,8 +23,12 @@ def _train(model, gs, latencies, optimizer, criterion):
 
     model.train()
     optimizer.zero_grad()
+
+    adjacency = adjacency.to(device)
+    features = features.to(device)
+    latency = latency.to(device)
    
-    predictions = model(adjacency, features)
+    predictions = model(adjacency, features, stage_nodes_lists)
 
     loss = criterion(predictions, latency)
     # print("predictions", predictions)
@@ -30,12 +39,16 @@ def _train(model, gs, latencies, optimizer, criterion):
     return loss
 
 def _test(model, g, latency, leeways, criterion, log_file=None):
-    adjacency, features, latency = dataset_mod.prepare_tensors([g], [latency])
+    adjacency, features, stage_nodes_lists, latency = dataset_mod.prepare_tensors([g], [latency])
 
     torch.set_grad_enabled(False)
     model.eval()
+
+    adjacency = adjacency.to(device)
+    features = features.to(device)
+    latency = latency.to(device)
     
-    predictions = model(adjacency, features)
+    predictions = model(adjacency, features, stage_nodes_lists)
 
     # if not model.binary_classifier:
     if log_file is not None:
@@ -165,8 +178,8 @@ def train(training_set,
                 best_accuracies[i] = current_accuracies[i]
                 best_epochs[i] = epoch_no
 
-        # if torch.cuda.is_available():
-        #     val_loss = val_loss.cpu()
+        if torch.cuda.is_available():
+            val_loss = val_loss.cpu()
 
         if lowest_loss is None or val_loss < lowest_loss:
             lowest_loss = val_loss
@@ -273,12 +286,17 @@ def predict(testing_data,
     return predicted
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--workflow_name', type=str, default='sn', help='Name of workflow to validation. Default: sn')
+    args = parser.parse_args()
+
     predictor_args = {
         # "num_features": 51,
-        "num_features": 19,
+        "num_features": 17,
         "num_layers": 3,
         # "num_layers": 4,
-        "num_hidden": 19,
+        "num_hidden": 17,
         # "num_hidden": 32,
         # "num_hidden": 128,
         "dropout_ratio": 0.2,
@@ -288,12 +306,11 @@ if __name__ == '__main__':
     }
 
     predictor = gcn.GCN(**predictor_args)
+    predictor = predictor.to(device)
 
-    target_workflow_name = "sn"
-    # target_workflow_name = "mr"
-    # target_workflow_name = "finra"
-    # target_workflow_name = "SLApp"
-    # target_workflow_name = "SLAppV"
+    target_workflow_name = args.workflow_name
+
+    print("Train for workflow: %s" % target_workflow_name)
 
     dataset = dataset_mod.Dataset(target_workflow_name=target_workflow_name)
     # print(len(dataset.dataset))
@@ -328,27 +345,6 @@ if __name__ == '__main__':
 
         if i:
             train_set.extend(dataset.train_set[points_per_iter*i:points_per_iter*(i+1)])
-
-        # if i:
-        #     # update training set
-        #     scores = predict(candidates, outdir="results",  metric="accuracy", predictor_name="gcn",
-        #          predictor=predictor, log=False, exp_name=None, load=False)
-
-        #     best_candidates = sorted(zip(candidates, scores), key=lambda p: p[1], reverse=True)
-
-        #     added = 0
-        #     for candidate, score in best_candidates:
-        #         if added == points_per_iter//2:
-        #             break
-        #         if candidate in train_set:
-        #             continue
-        #         train_set.append(candidate)
-        #         added += 1
-
-        #     random_th = best_candidates[len(scores) // (2**(i or 1))][1]
-        #     random_candidates = [pt for pt, score in zip(candidates, scores) if score > random_th]
-        #     selected_candidates = dataset_mod.select_random(random_candidates, points_per_iter//2, current=train_set)
-        #     train_set.extend(selected_candidates)
 
         print('Number of candidate points:', len(candidates))
         print('Number of training points:', len(train_set))

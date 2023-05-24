@@ -6,21 +6,13 @@ import itertools
 
 import time
 
-PRED_TH = 0.25
-UPPER_TH = None
-LOWER_TH = None
-
-sorted_stages = []
-#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cpu')
-
 def get_predictor(predictor_name="predictor"):
     predictor_args = {
         # "num_features": 51,
-        "num_features": 17,
+        "num_features": 19,
         "num_layers": 3,
         # "num_hidden": 600,
-        "num_hidden": 17,
+        "num_hidden": 19,
         # "num_hidden": 128,
         "dropout_ratio": 0.2,
         "weight_init": "thomas",
@@ -29,7 +21,6 @@ def get_predictor(predictor_name="predictor"):
     }
 
     predictor = gcn.GCN(**predictor_args)
-    predictor = predictor.to(device)
 
     weight_path = "results/accuracy/gcn/%s.pt" % predictor_name
 
@@ -44,41 +35,9 @@ def get_predictor(predictor_name="predictor"):
 # predictor = get_predictor()
 predictor = None
 
-def get_sorted_stages(workflow_name):
-    workflow = json.loads(open("workflows/%s.json" % (workflow_name)).read())
-
-    stateName = workflow["StartAt"]
-    state = workflow["States"][stateName]
-    over = False
-    # stages = {}
-    stages = []
-    index_stages = []
-
-    while not over:
-        index_stages.append(stateName)
-        if state["Type"] == "Task":
-            stages.append((len(index_stages)-1, 1))
-        elif state["Type"] == "Parallel":
-            stages.append((len(index_stages)-1, len(state["Branches"])))
-        if "End" in state:
-            over = True
-        else:
-            stateName = state["Next"]
-            state = workflow["States"][stateName]
-
-    stages.sort(key=lambda x: x[1], reverse=True)
-
-    temp_map = {}
-    for index, stage_info in enumerate(stages):
-        temp_map[stage_info[0]] = index
-
-    global sorted_stages
-    sorted_stages = json.dumps(temp_map)
-
-
 def get_init_partition(workflow_name, num_partitions=2):
     workflow = json.loads(open("workflows/%s.json" % (workflow_name)).read())
-    _, _, resources, _, _ = dataset_mod.get_adjacency(workflow)
+    _, indexs, resources, _, _ = dataset_mod.get_adjacency(workflow)
 
     stateName = workflow["StartAt"]
     state = workflow["States"][stateName]
@@ -86,7 +45,6 @@ def get_init_partition(workflow_name, num_partitions=2):
     
     partitions = {}
     stages = {}
-
     while not over:
         if state["Type"] == "Task":
             partitions[stateName] = 0
@@ -128,22 +86,12 @@ def get_policy_from_partitions(workflow_name, stages, partitions):
         # if  stage in policy and sum([len(i) for i in policy[stage]]) == len(funcs):
         #     policy[stage] = policy[stage][1:]
 
-    g = "\t".join([json.dumps(policy), workflow_name, sorted_stages])
+    g = "\t".join([json.dumps(policy), workflow_name, "0"])
     # print(g)
     # exit(0)
-    local_adjacency, local_features, local_stage_nodes_lists, _ = dataset_mod.prepare_tensors([g])
-
-    # for i in range(56):
-    #     print(i, [int(j) for j in local_adjacency[0][i].tolist()])
-
-    # for i in range(56):
-    #     print(i, local_features[0][i].tolist())
-
-    # exit(0)
-    local_adjacency = local_adjacency.to(device)
-    local_features = local_features.to(device)
+    local_adjacency, local_features, _ = dataset_mod.prepare_tensors([g])
     
-    prediction = predictor(local_adjacency, local_features, local_stage_nodes_lists)[0][0]
+    prediction = predictor(local_adjacency, local_features)[0][0]
     return policy, prediction
 
 def get_best_partitions_KL(workflow_name, stages, partitions, subsets=(0,1)):
@@ -308,23 +256,14 @@ def get_label_from_policy(workflow_name, policy):
             print(line)
             break
 
-def check_aggressive(current_prediction, mp_prediction):
-    if current_prediction > UPPER_TH or mp_prediction > UPPER_TH:
-        return False
-    elif current_prediction < mp_prediction:
-        return True
 
-def graph_partitioning(workflow_name, SLO=None):
+def graph_partitioning(workflow_name):
     print("Workflow %s" % workflow_name)
     start = time.time()
 
     global predictor
 
-    predictor = get_predictor(predictor_name="predictor_%s" % workflow_name)
-
-    get_sorted_stages(workflow_name)
-
-    # print(sorted_stages)
+    predictor = get_predictor(predictor_name="predictor_no_%s" % workflow_name)
 
     # exit(0)
 
@@ -344,8 +283,6 @@ def graph_partitioning(workflow_name, SLO=None):
     mt_policy, mt_prediction = get_policy_from_partitions(workflow_name, stages, partitions)
     print("multi thread prediction: %f" % mt_prediction)
 
-    # exit(0)
-
     for fs in stages.values():
         for i, f in enumerate(fs):
             partitions[f] = i
@@ -356,20 +293,12 @@ def graph_partitioning(workflow_name, SLO=None):
     get_label_from_policy(workflow_name, mt_policy)
     get_label_from_policy(workflow_name, mp_policy)
 
-    if SLO is None:
-        SLO = mp_prediction
-
-    print("SLO for workflow %s: " % workflow_name, float(SLO))
-
-    global UPPER_TH, LOWER_TH
-    UPPER_TH = (1 + PRED_TH) * SLO
-    LOWER_TH = (1 - PRED_TH) * SLO
+    SLO = mp_prediction
+    # SLO = 0.2
 
     max_partitions = len(set(partitions.values()))
 
-    # if mt_prediction < SLO or max_partitions == 1:
-    if mt_prediction < LOWER_TH or max_partitions == 1:
-    # if mt_prediction < LOWER_TH or max_partitions == 1 or check_aggressive(mt_prediction, mp_prediction):
+    if mt_prediction < SLO or max_partitions == 1:
         print("Best partitions is multi-thread")
         print("Policy %s" % json.dumps(mt_policy))
         print("KL use %f" % (time.time()-start))
@@ -380,9 +309,7 @@ def graph_partitioning(workflow_name, SLO=None):
         stages, partitions = get_init_partition(workflow_name, num_partitions=num_partitions)
         best_partitions = multi_way_KL(workflow_name, stages, partitions)
         policy, prediction = get_policy_from_partitions(workflow_name, stages, best_partitions)
-        # if prediction < SLO:
-        if prediction < LOWER_TH:
-        # if prediction < LOWER_TH or check_aggressive(prediction, mp_prediction):
+        if prediction < SLO:
             print("Best partitions is mixed-process-thread")
             print("Policy %s" % json.dumps(policy))
             print("KL use %f" % (time.time()-start))
@@ -417,9 +344,8 @@ def graph_partitioning(workflow_name, SLO=None):
 
 
 def test(workflow_name):
-    print(workflow_name)
     global predictor
-    predictor = get_predictor(predictor_name="predictor_%s" % workflow_name)
+    predictor = get_predictor(predictor_name="predictor_no_%s" % workflow_name)
 
     # validation
     with open("lats/lats_%s_stru.csv" % workflow_name) as f:
@@ -431,18 +357,16 @@ def test(workflow_name):
     loss = []
     loss2 = []
 
+    # workflow_mp_latency = {"mr": 51.32, "sn": 59.21, "finra": 199.26, "App7": 152.54, "App10": 174.41}
+
     for l in lines:
-        adjacency, features, stages_nodes_lists, latency = dataset_mod.prepare_tensors([l[0]], [l[1]])
-        adjacency = adjacency.to(device)
-        features = features.to(device)
-        predictions = predictor(adjacency, features, stages_nodes_lists).to("cpu")
+        adjacency, features, latency = dataset_mod.prepare_tensors([l[0]], [l[1]])
+        predictions = predictor(adjacency, features)
         # print(predictions[0][0], latency[0][0], l)
-        #print("%f, %f, %s" % (predictions[0][0], latency[0][0], l))
+        # print("%f, %f, %s" % (predictions[0][0], latency[0][0], l))
         # exit(0)
         loss.append(abs(predictions[0][0] - latency[0][0]) / latency)
         loss2.append((predictions[0][0] - latency[0][0]) / latency)
-        # if abs(loss[-1]) > 0.25:
-        #     print("%f, %f, %s" % (predictions[0][0], latency[0][0], l))
     
     print(workflow_name, "validation (abs):", sum(loss) / len(loss))
     print(workflow_name, "validation:", sum(loss2) / len(loss2))
@@ -453,8 +377,7 @@ def test(workflow_name):
         
     # print(",".join([str(float(i)) for i in loss]))
 
-    return
-    exit(0)
+    # exit(0)
     # train loss
     with open("lats/lats_no_%s_stru.csv" % workflow_name) as f:
         lines = f.readlines()
@@ -466,9 +389,9 @@ def test(workflow_name):
     loss2 = []
 
     for l in lines:
-        adjacency, features, stages_nodes_lists, latency = dataset_mod.prepare_tensors([l[0]], [l[1]])
-        predictions = predictor(adjacency, features, stages_nodes_lists)
-        print("%f, %f, %s" % (predictions[0][0], latency[0][0], l))
+        adjacency, features, latency = dataset_mod.prepare_tensors([l[0]], [l[1]])
+        predictions = predictor(adjacency, features)
+        # print("%f, %f, %s" % (predictions[0][0], latency[0][0], l))
         loss.append(abs(predictions[0][0] - latency[0][0]) / latency)
         loss2.append((predictions[0][0] - latency[0][0]) / latency)
     
@@ -479,14 +402,37 @@ def test(workflow_name):
         loss2 = [str(float(i))+"\n" for i in loss2]
         f.writelines(loss2)
 
-#graph_partitioning("mr", 0.06)
-#graph_partitioning("sn", 0.07)
-#graph_partitioning("finra", 0.22)
-#graph_partitioning("SLApp", 0.18)
-#graph_partitioning("SLAppV", 0.226)
+# graph_partitioning("mr")
+graph_partitioning("sn")
+# graph_partitioning("finra")
+# graph_partitioning("App7")
+# graph_partitioning("App10")
 
-test("sn")
-#test("mr")
-#test("finra")
-#test("SLApp")
-# test("SLAppV")
+# test("mr")
+# test("sn")
+# test("finra")
+# test("App7")
+# test("App10")
+
+# test_mr()
+# if __name__ == '__main__':
+#     predictor = get_predictor()
+
+#     g = '{"parallel": [["pi"], ["fibonacci"]], "parallel2": [["fibonacci2", "marketdata2"]]}\tworkflow1'
+    
+#     latency = '392.0'
+
+#     adjacency, features, latency = dataset_mod.prepare_tensors([g], [latency])
+
+#     predictions = predictor(adjacency, features)
+
+#     print(predictions)
+#     print(latency)
+
+#     g = '{"parallel": [["pi"], ["fibonacci", "marketdata"]], "parallel2": [["fibonacci2", "marketdata2"]]}\tworkflow1'
+#     adjacency, features, _ = dataset_mod.prepare_tensors([g])
+
+#     predictions = predictor(adjacency, features)
+
+#     print(predictions)
+#     
