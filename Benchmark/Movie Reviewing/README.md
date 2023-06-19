@@ -3,9 +3,9 @@ This workflow is generated from [Media Microservices of DeathStarBench](https://
 
 ## Pre-requirements
 Due to the dockershim removal in current Kubernetes, we evaluate this workflow in old versions of Docker and Kubernetes.
-* Docker ($leq$v20.10)
-* Kubernetes ($leq$v1.23)
-* OpenFaaS
+* Docker v20.10.7
+* Kubernetes v1.23.6
+* OpenFaaS v0.21.1
 
 ## Database deployment
 First, we need to deploy databases used in Movie Reviewing, including Redis, MongoDB and MemoryCache.

@@ -3,9 +3,9 @@ This workflow is generated from [FINRA Application of Faastlane](https://github.
 
 ## Pre-requirements
 Due to the dockershim removal in current Kubernetes, we evaluate this workflow in old versions of Docker and Kubernetes.
-* Docker ($leq$v20.10)
-* Kubernetes ($leq$v1.23)
-* OpenFaaS
+* Docker v20.10.7
+* Kubernetes v1.23.6
+* OpenFaaS v0.21.1
 
 ## Function deployment
 We need to execute the following command in each worker of the cluster to deploy OpenFaaS functions.
