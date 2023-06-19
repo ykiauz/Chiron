@@ -3,8 +3,8 @@ This workflow is generated from [FINRA Application of Faastlane](https://github.
 
 ## Pre-requirements
 Due to the dockershim removal in current Kubernetes, we evaluate this workflow in old versions of Docker and Kubernetes.
-* Docker ($leqslant$v20.10)
-* Kubernetes ($leqslant$v1.23)
+* Docker ($leq$v20.10)
+* Kubernetes ($leq$v1.23)
 * OpenFaaS
 
 ## Function deployment
