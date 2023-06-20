@@ -15,6 +15,21 @@ cd functions
 ```
 Alternatively, we can choose to execute the deployment command on a single worker and synchronize the compiled function images to other workers.
 
+For rapid reproduction, we can also specify fixed worker that functions can are deployed. For example, the following content of function's yml allows deployment of function `marketdata` only on `worker1`:
+```
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:31112
+functions:
+  marketdata:
+    lang: python3-flask-debian
+    handler: ./marketdata
+    image: marketdata:latest
+    constraints:
+     - "kubernetes.io/hostname=worker1"
+```
+
 We can also remove all functions as following:
 ```
 ./rm_finra.sh
@@ -23,7 +38,7 @@ We can also remove all functions as following:
 ## Workflow invocation
 The following command will output details of workflow execution:
 ```
-python3 OpenFaaS.py
+python3 OpenFaaS-5.py
 ```
 
 ## Parallelism configuration

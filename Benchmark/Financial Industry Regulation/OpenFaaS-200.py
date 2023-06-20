@@ -6,7 +6,11 @@ import time
 
 margin_balance_url = "http://127.0.0.1:31112/function/margin-balance"
 
-funcs = ["marketdata", "lastpx", "side", "trddate", "volume"]
+funcs = ["marketdata", "lastpx", "side", "trddate", "volume"] * 40
+
+for i in range(1, 40):
+    for j in range(5):
+        funcs[i * 5 + j] = "%s%d" % (funcs[i * 5 + j], i + 1)
 
 urls = [f"http://127.0.0.1:31112/function/{func}" for func in funcs]
 
@@ -50,7 +54,7 @@ def workflow():
     res = requests.post(margin_balance_url, data=json.dumps(parallel_res)).text
    
     # return int((time.time()-start)*1000) 
-    print("This request uses %d ms" % int((time.time()-start)*1000))
+    print("This request uses %d ms" % int((time.time() - start) * 1000))
     try:
         for i, temp_res in enumerate(parallel_res):
             temp_json = json.loads(temp_res)
@@ -60,7 +64,7 @@ def workflow():
                 print("  %s: %f ms" % (funcs[i], (temp_json["time"]["end"] - temp_json["time"]["start"]) * 1000))
         print("  margin-balance: %f ms" % get_times(res, parallel_res))
     except Exception as e:
-        print(e)
+        raise e
 
 if __name__ == '__main__':
     workflow()

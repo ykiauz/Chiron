@@ -39,6 +39,21 @@ cd functions
 ```
 Alternatively, we can choose to execute the deployment command on a single worker and synchronize the compiled function images to other workers.
 
+For rapid reproduction, we can also specify fixed worker that functions can are deployed. For example, the following content of function's yml allows deployment of function `compose-review` only on `worker1`:
+```
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:31112
+functions:
+  compose-review:
+    lang: python3-flask
+    handler: ./compose-review
+    image: compose-review:latest
+    constraints:
+     - "kubernetes.io/hostname=worker1"
+```
+
 We can also remove all functions as following:
 ```
 ./rm_mr.sh

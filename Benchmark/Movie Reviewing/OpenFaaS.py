@@ -73,10 +73,7 @@ def workflow():
     
     for t in threads:
         t.join()
-   
-    # return int((time.time()-start)*1000) 
-    # print("This request uses %d ms" % int((time.time()-start)*1000))
-    
+       
     funcs_time = {}
     for f in funcs:
         funcs_time[f] = -1
@@ -85,14 +82,14 @@ def workflow():
         for res in parallel_res:
             res = json.loads(res)
             for k, v in res["time"].items():
-                funcs_time[k] = int((v["end_time"]-v["start_time"])*1000)
+                funcs_time[k] = int((v["end_time"] - v["start_time"]) * 1000)
                 if funcs_time[k] == 0:
-                    funcs_time[k] = round((v["end_time"]-v["start_time"])*1000, 2)
+                    funcs_time[k] = round((v["end_time"] - v["start_time"]) * 1000, 2)
         print("Details:")
         for f in funcs:
             print("  %s: %s ms" % (f, str(funcs_time[f])))
     except Exception as e:
-        print(e)
+        raise e
 
 if __name__ == '__main__':
     workflow()

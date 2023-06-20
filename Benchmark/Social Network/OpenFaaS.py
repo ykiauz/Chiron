@@ -27,9 +27,7 @@ def gen_random_string(i):
     return "".join([choices[random.randint(0, len(choices)-1)] for j in range(i)])
 
 def post(url, data, l):
-    #start = time.time()
     res = requests.post(url, data).text
-    #print(url, (time.time()-start)*1000)
     l.append(res)
 
 def generate_data():
@@ -105,7 +103,7 @@ def workflow():
 
     #return int((time.time()-start)*1000)
     
-    print("This request uses %d ms" % int((time.time()-start)*1000))
+    print("This request uses %d ms" % int((time.time() - start) * 1000))
    
     funcs_time = {}
     for f in funcs:
@@ -115,15 +113,15 @@ def workflow():
         for res in parallel_res:
             res = json.loads(res)
             for k, v in res["time"].items():
-                funcs_time[k] = int((v["end_time"]-v["start_time"])*1000)
+                funcs_time[k] = int((v["end_time"] - v["start_time"]) * 1000)
                 if funcs_time[k] == 0:
-                    funcs_time[k] = round((v["end_time"]-v["start_time"])*1000, 2)
+                    funcs_time[k] = round((v["end_time"] - v["start_time"]) * 1000, 2)
                 print(k, v["start_time"], v["end_time"])
         print("Details:")
         for f in funcs:
             print("  %s: %s ms" % (f, str(funcs_time[f])))
     except Exception as e:
-        print(e)
+        raise e
 
 if __name__ == '__main__':
     workflow()
