@@ -99,3 +99,9 @@ faas-cli login --password admin
 ```
 
 We can use `faas-cli list` to check if everything is ready.
+
+
+## Python dependencies
+```
+pip install requirements.txt
+```
