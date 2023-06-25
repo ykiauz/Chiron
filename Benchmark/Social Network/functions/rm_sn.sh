@@ -2,5 +2,4 @@ funcs=("compose-post" "upload-media" "upload-creator" "upload-text" "upload-user
 for ((i=0;i<10;i++))
 do
     faas-cli remove -f ${funcs[$i]}.yml
-    kubectl delete svc ${funcs[$i]} -n openfaas-fn
 done

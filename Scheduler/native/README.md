@@ -34,7 +34,8 @@ And we can get the return:
         ["marketdata13", "trddate10", "volume4", "volume3", "volume20", "volume10", "volume5", "volume18", "volume7"]],
 
        [["marketdata16", "marketdata3", "trddate17", "trddate6", "lastpx13", "lastpx2", "volume8", "side4", "side15"],
-        ["marketdata6", "marketdata20", "trddate4", "trddate15", "lastpx11", "volume9", "volume6", "volume17", "side13"], ["marketdata9", "marketdata18", "trddate2", "trddate13", "lastpx3", "lastpx20", "side17", "side10", "side11"], 
+        ["marketdata6", "marketdata20", "trddate4", "trddate15", "lastpx11", "volume9", "volume6", "volume17", "side13"],
+        ["marketdata9", "marketdata18", "trddate2", "trddate13", "lastpx3", "lastpx20", "side17", "side10", "side11"], 
         ["lastpx12", "marketdata7", "trddate11", "volume2", "lastpx7", "side20", "lastpx18", "marketdata5", "volume13"], 
         ["volume14", "marketdata11", "lastpx16", "volume11", "side18", "trddate20", "side7", "marketdata14", "lastpx5"]]], 
 
