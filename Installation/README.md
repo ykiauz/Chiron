@@ -103,5 +103,5 @@ We can use `faas-cli list` to check if everything is ready.
 
 ## Python dependencies
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```

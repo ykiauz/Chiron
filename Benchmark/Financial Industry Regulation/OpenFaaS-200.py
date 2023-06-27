@@ -38,7 +38,7 @@ def get_times(res, events):
 def workflow():
     start = time.time()
     
-    parallel_res = []
+    parallel_res = [''] * 200
     threads = []
     
     for i, url in enumerate(urls):

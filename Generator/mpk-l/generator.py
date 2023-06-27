@@ -177,7 +177,7 @@ def generate_wrap_code(req):
     wrap_codes += run_codes
     wrap_codes += MyThread_codes
     wrap_codes += runt_codes
-    wrap_codes += (remote_codes.replace("workflow-name", workflow_name) + "\n")
+    wrap_codes += (remote_codes.replace("workflow-name", workflow_name.lower()) + "\n")
     wrap_codes += handle_codes
 
     return wrap_codes

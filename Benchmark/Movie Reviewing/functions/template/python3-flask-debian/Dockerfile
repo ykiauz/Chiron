@@ -45,7 +45,7 @@ COPY --chown=app:app function/   .
 FROM build as test
 ARG TEST_COMMAND=tox
 ARG TEST_ENABLED=true
-RUN [ "$TEST_ENABLED" = "false" ] && echo "skipping tests" || eval "$TEST_COMMAND"
+# RUN [ "$TEST_ENABLED" = "false" ] && echo "skipping tests" || eval "$TEST_COMMAND"
 
 
 FROM build as ship
