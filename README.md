@@ -20,4 +20,4 @@ This module produces the orchestrator code of `wraps` based on the result of `Sc
 
 
 ## Envaluation
-This sections contains a simple instruction for replaying our evaluation. The details can be found in [Generator](https://github.com/ykiauz/Chiron/tree/main/Envaluation).
+This sections contains a simple instruction for replaying our evaluation. The details can be found in [Envaluation](https://github.com/ykiauz/Chiron/tree/main/Envaluation).
