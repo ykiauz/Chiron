@@ -1,6 +1,6 @@
 # RFR model in Chiron's Evaluation
 ## Model input
-We first profile 16 system-layer and microarchitecture-layer metrics for each function, including ContextSwitch, L1IMPKI, LIDMKPI, L2MPK2, TLBDMPKI, TLBIMPKI, BranchMPKI, L3MPKI, MLP, CpuUtil, MemUtil, MemBW, LLC, IPC, DiskIO and NetworkIO, which are recommended by the performance predictor Gsight [SC'21]. Then, we use the above metrics and solo-run latencies of functions in the same process as model input. 
+We first profile 16 system-layer and microarchitecture-layer metrics for each function, including Context-switches, L1I MPKI, LID MKPI, L2 MPKI, L3MPKI, TLBD MPKI, TLBI MPKI, Branch MPKI,  MLP, CPU utilization, Memory utilization, Network bandwidth, LLC, IPC, Disk IO and Memory IO, which are recommended by the performance predictor Gsight [SC'21]. Then, we use the above metrics and solo-run latencies of functions in the same process as model input. 
 
 ## Model output
 This model outputs the predicted latency of executing given functions in the same process. 
