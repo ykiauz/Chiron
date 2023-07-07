@@ -12,7 +12,7 @@ def run_train_lstm(workflow):
     out_dim = 1
     mid_dim = 8
     mid_layers = 1
-    batch_size = 5
+    batch_size = 4
     mod_dir = 'models'
 
     '''load data'''
