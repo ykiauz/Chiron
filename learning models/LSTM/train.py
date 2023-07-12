@@ -109,7 +109,7 @@ def load_data(workflow, flag):
     data_x = []
     data_y = []
     index = 0
-    batch_size = 5
+    batch_size = 4
     num_batch = len(data_xx) / batch_size
     while index < num_batch:
         data_x.append(data_xx[index*batch_size:(index+1)*batch_size])
