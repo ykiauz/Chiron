@@ -12,7 +12,7 @@ def run_train_lstm(workflow):
     out_dim = 1
     mid_dim = 8
     mid_layers = 1
-    batch_size = 4
+    batch_size = 5
     mod_dir = 'models'
 
     '''load data'''
@@ -109,9 +109,9 @@ def load_data(workflow, flag):
     data_x = []
     data_y = []
     index = 0
-    batch_size = 4
+    batch_size = 5
     num_batch = len(data_xx) / batch_size
-    while index < num_batch - 1:
+    while index < num_batch:
         data_x.append(data_xx[index*batch_size:(index+1)*batch_size])
         data_y.append(data_yy[index*batch_size:(index+1)*batch_size])
         index += 1
